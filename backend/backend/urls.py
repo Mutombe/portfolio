@@ -23,7 +23,11 @@ from portfolio import views
 
 
 router = routers.DefaultRouter()
-router.register(r'articles', views.ArticleView, 'todo')
+router.register(r'articles', views.ArticleView, 'articles')
+router.register(r'projects', views.ProjectsView, 'projects')
+router.register(r'books', views.BookView, 'books')
+router.register(r'lunguages', views.LunguageView, 'lunguages')
+router.register(r'profile', views.ProfileView, 'profile')
 
 
 urlpatterns = [
