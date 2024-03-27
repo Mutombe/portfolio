@@ -8,7 +8,6 @@ import LinksPage from "./links/links";
 import ArticlesPage from "./articles/article";
 import Git from "./git-metadata/git";
 import More from "./more/more";
-import CV from "./cv/cv";
 import Books from "./books/books";
 import { Whoops404 } from "./error-page/error-page";
 
@@ -24,7 +23,7 @@ function RouteFunction() {
                     element={<ProfilePage />}
                 />
                 <Route
-                    path="/project-details"
+                    path="/projects/:id"
                     element={<ProjectDetailsPage />}
                 />
                 <Route
@@ -54,11 +53,6 @@ function RouteFunction() {
                 <Route
                     path="/books"
                     element={<Books />}
-                />
-
-                <Route
-                    path="/cv"
-                    element={<CV />}
                 />
 
                 <Route path="*" element={<Whoops404 />} />

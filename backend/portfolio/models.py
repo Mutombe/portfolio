@@ -1,14 +1,12 @@
 from django.db import models
 
-
-
-
 # Create your models here.
 class Project(models.Model):
     """
     Projects that I have worked on.
     """
     name = models.CharField(max_length=20)
+    project_picture = models.ImageField(upload_to="", null=True)
     description = models.CharField(max_length=200)
     github = models.URLField(max_length=1000)
     start_date = models.DateField()
@@ -28,6 +26,10 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     
+class CV(models.Model):
+    """My Carriculum Vitae"""
+    file = models.FileField(upload_to="", blank=False)
+    
 class Book(models.Model):
     """
     Books I have read and also in the process of reading.
@@ -40,14 +42,14 @@ class Book(models.Model):
 
     category =  models.CharField(max_length=100, choices=BOOK_CATEGORY_CHOICES)
     name = models.CharField(max_length=200)
-    file = models.FileField(blank=False, upload_to="")
+    file = models.FileField(blank=False, upload_to="", max_length=500) 
+    year =  models.IntegerField(blank=True, null=True)
 
     def __str_(self):
-        return self.name
+        return self.file
     
     def download_book(self):
-        """Download books I have read and in the process of reading"""
-        pass
+        return self.file.url
 
 class ProgrammingLunguage(models.Model):
     """

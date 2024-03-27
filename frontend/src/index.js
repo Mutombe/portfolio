@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MainNav from "./components/navbar";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
- 
-        <App />
-
-  </React.StrictMode>
+render(
+ <Router>
+  <MainNav />
+    <App />
+ </Router>,
+ document.getElementById("root")
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

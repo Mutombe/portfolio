@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+import { MyComponent } from "../../design-util";
 import {
   AiFillGithub,
   AiOutlineFacebook,
@@ -10,16 +10,18 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 function LinksPage() {
   return (
-    <Container fluid className="footer">
+    <div className="my-div">
+    <Container fluid className="my-div">
       <Row>
         <Col md="12" className="footer-body">
         <ul style={{listStyle: "none"}} className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/Muzmmil207"
+                  href="https://github.com/Mutombe"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  style={{display: 'flex', width: '3em'}}
                 >
                   <AiFillGithub />
                 </a>
@@ -36,7 +38,8 @@ function LinksPage() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/muzamil-ali-63230a206"
+                  href=": https://www.linkedin.com/in/simbarashe-mutombe-a104bb247
+                  "
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -46,7 +49,7 @@ function LinksPage() {
               </li>
               <li className="social-icons">
                 <a
-                  href="mailto:mly88207@gmail.com"
+                  href="mailto:simbarashemutombe1@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
@@ -58,6 +61,7 @@ function LinksPage() {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }
 

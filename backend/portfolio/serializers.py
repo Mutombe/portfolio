@@ -1,4 +1,4 @@
-from .models import Article, Project, Book, ProgrammingLunguage, Profile
+from .models import Article, Project,CV, Book, ProgrammingLunguage, Profile
 from rest_framework import serializers
 
 
@@ -10,6 +10,11 @@ class ArticleSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
+        fields = '__all__'
+
+class CVSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CV
         fields = '__all__'
 
 class BooksSerializer(serializers.ModelSerializer):

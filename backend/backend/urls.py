@@ -22,9 +22,11 @@ from rest_framework import routers
 from portfolio import views
 
 
+
 router = routers.DefaultRouter()
 router.register(r'articles', views.ArticleView, 'articles')
 router.register(r'projects', views.ProjectsView, 'projects')
+router.register(r'cv', views.CvView, 'cv')
 router.register(r'books', views.BookView, 'books')
 router.register(r'lunguages', views.LunguageView, 'lunguages')
 router.register(r'profile', views.ProfileView, 'profile')
@@ -33,6 +35,8 @@ router.register(r'profile', views.ProfileView, 'profile')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/books/<int:pdf_id>/', views.download_book_pdf, name='file_download'),
+    #path('download/<int:dd>/', views.download_book, name='file_download')
 ]
 
 if settings.DEBUG:

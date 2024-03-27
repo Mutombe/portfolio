@@ -1,17 +1,16 @@
-import React from "react";
-import MainNav from "../../navbar";
 import ProjectsPage from "../projects-page/projects-page";
+import React, { useState } from 'react';
+import './home.css';
+import { MyComponent } from "../../design-util";
 
 function HomePage() {
  return (
-    <div>
-      <MainNav />
-      <br></br>
+    <div className="my-div">
       <ProjectsPage />
-      <p>Home Page</p>
     </div>
  );
 }
+
 
 export default HomePage
 

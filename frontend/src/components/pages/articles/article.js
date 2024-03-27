@@ -1,10 +1,9 @@
 import React from "react";
-import MainNav from "../../navbar";
+
 
 function ArticlesPage() {
  return (
-    <div>
-        <MainNav />
+    <div className="my-div">
         <h1>Articles</h1>
     </div>
  );
