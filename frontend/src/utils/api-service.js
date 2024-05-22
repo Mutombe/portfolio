@@ -5,10 +5,6 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import axios from 'axios'
 
-//var fileDownload = require('js-file-download');
-
-
-
 async function sendRequest(url, options) {
     const reponse = await fetch(url, options);
     return await reponse.json();
@@ -112,7 +108,6 @@ export const DownloadWithAxios = (url, title) => {
   };
 
 
-
   return (
     <div>
       <button onClick={handledownload}>Download PDF</button>
@@ -130,10 +125,6 @@ export const DownloadWithAxios = (url, title) => {
     </div>
   );
 };
-
-
-
-
 
 
 export default useDataFetcher;
