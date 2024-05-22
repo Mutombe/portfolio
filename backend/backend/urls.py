@@ -36,7 +36,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/books/<int:pdf_id>/', views.download_book_pdf, name='file_download'),
-    #path('download/<int:dd>/', views.download_book, name='file_download')
 ]
 
 if settings.DEBUG:

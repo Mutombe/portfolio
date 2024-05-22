@@ -5,47 +5,23 @@ import useDataFetcher from "../../../utils/api-service";
 import { BOOKS_URL } from "../../../constants";
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
-import axios from 'axios'
+import { DownloadWithAxios } from "../../../utils/api-service";
+
 
 
 
 
 function Books() {
-    const { data, loading, error } = useDataFetcher(BOOKS_URL);
-
-    const forceDownload = (response, title) =>{
-      console.log(response)
-      const url = window.URL.createObjectURL(new Blob([response.data]))
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', title+'.pdf')
-      document.body.appendChild(link)
-      link.click()
-  };
+  const { data, loading, error } = useDataFetcher(BOOKS_URL);
+  if (loading) {
+    return <div className="my-div">Loading...</div>;
+  }
   
+  if (error) {
+    return <div className="my-div">Error: {error}</div>;
+  } 
 
-  const handledownload = (url, title) => {
-    axios({
-      method: 'get',
-      url,
-      responseType: 'arraybuffer'
-    }).then((response)=>{
-      forceDownload(response, title)
-    }).catch((error)=>{
-          console.error(error);
-  })
-};
-  
-
-    if (loading) {
-      return <div className="my-div">Loading...</div>;
-    }
-  
-    if (error) {
-      return <div className="my-div">Error: {error}</div>;
-    } 
-
-    return (
+  return (
     <div
         aria-live="polite"
         aria-atomic="true"
@@ -65,7 +41,7 @@ function Books() {
                     alt=""
                   />
                   <strong className="me-auto">{book.name.substr(0, 26)}...</strong>
-                  <button onClick={handledownload}>Download PDF</button>
+                  <button>{DownloadWithAxios}</button>
                 </Toast.Header>
                 <Toast.Body><strong>Category </strong>{book.category} - Year {book.year} </Toast.Body>
               </Toast>
